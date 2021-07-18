@@ -1,7 +1,17 @@
-import React ,{useState} from 'react'
+import React ,{useState, useEffect} from 'react'
+import Header from './Header'
+import './Header.css'
+
+
 import {useHistory} from 'react-router-dom'
 
 function Register() {
+    useEffect(()=>{
+        if (localStorage.getItem('user-info'))
+        {
+            history.push('/add')
+        }
+    },[])
 
     const [name,setName]=useState('')
     const [password,setPassword]=useState('')
@@ -31,6 +41,7 @@ function Register() {
 
     return(
         <div className="col-sm-6 offset-sm-3">
+            <Header />
             <h1> register page</h1>
             {/* <label htmlFor="name">Name</label> */}
             <input type="text" value={name} onChange={(e)=>setName(e.target.value)}  className="form-control" placeholder="name" /><br />
