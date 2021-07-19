@@ -6,6 +6,8 @@ import './Header.css'
 function Header() {
     let user = JSON.parse(localStorage.getItem('user-info')) 
     const history = useHistory()
+
+    
     function logOut(){
         localStorage.clear();
         history.push('/register')
@@ -30,9 +32,11 @@ function Header() {
          
                     </Nav>
                     {localStorage.getItem('user-info')?
-                    <Nav className= "col-sm-6">
+                    <Nav >
                          < NavDropdown title={user && user.name}>
                           <NavDropdown.Item onClick={logOut}>Logout</NavDropdown.Item>
+                          {/* <NavDropdown.Item onClick={profile}>profile</NavDropdown.Item> */}
+
                           </NavDropdown>
                     </Nav>
                     :null}

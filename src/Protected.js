@@ -6,13 +6,19 @@ import './Header.css'
 
 function Protected(props) {
    
-    let Cmp= props.Cmp
+    let Cmp = props.Cmp
     const history= useHistory();
 
     useEffect(()=>{
         if (!localStorage.getItem('user-info'))
         {
             history.push('/register')
+        }
+    },[])
+    useEffect(()=>{
+        if (!localStorage.getItem('user-info'))
+        {
+            history.push('/login')
         }
     },[])
 

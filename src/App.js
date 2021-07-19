@@ -18,13 +18,13 @@ function App() {
            <Login />
         </Route>
         <Route path="/add">
-         <Protected Cmp={AddProduct} />
+         <Protected Cmp ={AddProduct} />
         </Route>
         <Route path="/register">
           <Register />
         </Route>
         <Route path="/update">
-           <Protected Cmp={UpdateProduct} />
+           <Protected Cmp ={UpdateProduct} />
 
         </Route>
       </BrowserRouter>
